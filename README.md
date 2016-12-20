@@ -6,7 +6,8 @@ I learn best by teaching others, so I end up writing tutorials/examples to mysel
 
 1. example-gnupg.py
   * Use GnuPG to encrypt a file and FTP it to a remote server. Full tutoral [here][2].
-
+2. example-class.py
+    * An Employee class demonstrating the use of class attributes, instance attributes, @property, @staticmethod, @classmethod and __str__.
 
 [1]:https://www.jesuisharpua.com "Je Suis Harpua - Blog"
 [2]:https://www.jesuisharpua.com/code/python/file-encryption-using-python-gpg/ "GnuPG Tutorial"
