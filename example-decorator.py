@@ -9,31 +9,31 @@ execute_query() function.
 class Database():
     """Stub a database connection."""
     def __init__(self):
-        self.db = "biz"
-        self.cursor = "baz"
+        self.connection = "baz"
 
     def establish_connection(self):
         print("Fetching DB connection")
-        return self.db, self.cursor
+        return self.connection
 
 
 def dbconnection(function):
     """Return a database connection, as named parameter, to the decorated function."""
     def wrapper(*args, **kwargs):
-        if "db_args" not in kwargs:
-            db, cursor = Database().establish_connection()
-            kwargs["db_args"] = db, cursor
+        if "connection" not in kwargs:
+            connection = Database().establish_connection()
+            kwargs["connection"] = connection
         return function(*args, **kwargs)
     return wrapper
 
+
 @dbconnection
-def execute_query(connection=None, schema=None, db_args=None):
-    print("Executing query with DB connection: {}".format(db_args))
+def execute_query(connection=None):
+    print("Executing query with DB connection: {}".format(connection))
 
 
 print()
 print("Executing Query")
-execute_query(db_args=("foo", "bar"))
+execute_query(connection="foo")
 print("All Done!")
 print()
 print("Executing Query")
