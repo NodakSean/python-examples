@@ -35,7 +35,7 @@ class Employee:
         return "Name:{} | Email: {} | ID: {}".format(self.fullname, self.email_address, self.employee_id)
 
     def __repr__(self):
-        return "Employee({}, {})".format(self.first_name, self.last_name)
+        return "{}({}, {})".format(self.__class__.__name__, self.first_name, self.last_name)
 
 print()
 a = Employee("John", "Smith")
